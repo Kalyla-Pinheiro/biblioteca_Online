@@ -3,6 +3,8 @@
 <head>
     <title>Sistema de Empréstimo de Livros</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:wght@700&display=swap');
+
         body {
             background-color: #261717;
             color: #dfb97f;
@@ -98,12 +100,65 @@
         .button:hover {
             background-color: #6f5c40;
         }
+
+        .header-livros {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 5%;
+            background: #120b0b;
+        }
+
+        .header-livros > li, a {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 18px;
+            color:#dfb97f;
+            text-decoration: none;
+        }
+
+        .logo {
+            cursor: pointer;
+            color: #dfb97f;
+            font-size: 21px;
+        }
+
+        .nav_links {
+            list-style: none;
+        }
+
+        .nav_links > li {
+            display: inline-block;
+            padding: 0px 30px;
+        }
+
+        .link {
+            color: #dfb97f;
+            position: relative;
+            transition: .35s;
+        }
+
+        .link:hover {
+            color: white;
+        }
+
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Sistema de Empréstimo de Livros</h1>
-    </div>
+
+    <header class="header-livros">
+        <a href="../livros-home/livros-home.html" class="logo">
+          Biblioteca Online
+        </a>
+    
+        <nav>
+        <ul class="nav_links">
+          <li><a href="#" class="link">Termos</a></li>
+          <li><a href="#" class="link">Contato</a></li>
+          <li><a href="#" class="link">Log-out</a></li>
+        </ul>
+        </nav>
+    </header>
     
     <div class="container">
         <div class="book">
