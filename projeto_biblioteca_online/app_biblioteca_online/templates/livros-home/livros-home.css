@@ -1,69 +1,181 @@
-.bicicletas-lista {
-    padding-top: 60px;
-    padding-bottom: 120px;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:wght@700&display=swap');
+
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+.main-livros {
+  width: 100vw;
+  background-color: #261717;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.card-livros {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 50px;
+  background: #dfb97f;
+  border-radius: 20px;
+  box-shadow: 0px 10px 40px #120b0b;
+}
+
+.header-livros {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 5%;
+  background: #120b0b;
+}
+
+.header-livros > li, a {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color:#dfb97f;
+  text-decoration: none;
+}
+
+.logo {
+  cursor: pointer;
+  color: #dfb97f;
+  font-size: 21px;
+}
+
+.nav_links {
+  list-style: none;
+}
+
+.nav_links > li {
+  display: inline-block;
+  padding: 0px 30px;
+}
+
+.link {
+  color: #dfb97f;
+  position: relative;
+  transition: .35s;
+}
+
+.link:hover {
+  color: white;
+}
+
+h1, h2, h3 {
+  font-family: 'Open Sans', sans-serif;
+  color: #261717;
+  margin: 0px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+ul {
+  padding: 0px;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+img[src$=".jpg"] {
+  border-radius: 4px;
+}
+
+.elemento {
+  transition: .35s;
+  cursor: pointer;
+}
+
+.elementos:hover > :not(:hover) {
+  opacity: .4;
+  transform: scale(0.9);
+}
+
+.livros-lista {
+  padding-top: 60px;
+  padding-bottom: 120px;
+}
+
+.livros-lista h2 {
+  font-size: 40px;
+  margin-bottom: 40px;
+  color: #261717;
+}
+
+.livros-lista ul {
+  display: flex;
+  gap: 40px;
+  padding: 0 20px 20px 20px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x: auto;
+}
+
+.livros-lista ul {
+  padding: 0px 0px 20px 0px;
+}
+
+.livros-lista li {
+  flex: 1;
+  min-width: 280px;
+}
+
+.livros-lista a {
+  display: block;
+}
+
+.livros-lista img {
+  margin-bottom: 16px;
+}
+
+.livros-lista h3 {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.livros-lista h3::before {
+  content: "";
+  display: inline-block;
+  height: 8px;
+  width: 12px;
+  margin-right: 8px;
+  background-color: var(--cor-p1);
+  transition: width 0.2s;
+}
+
+
+
+.livros-lista li span {
+  padding-left: 20px;
+}
+
+@media (max-width: 800px) {
+  .livros-lista {
+    padding-bottom: 60px;
   }
-  
-  .bicicletas-lista h2 {
-    margin-bottom: 40px;
+  .livros-lista ul {
+    gap: 20px;
   }
-  
-  .bicicletas-lista ul {
-    display: flex;
-    gap: 40px;
-    padding: 0 20px 20px 20px;
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
-    overflow-x: auto;
-  }
-  
-  #bicicleta .bicicletas-lista ul {
-    padding: 0px 0px 20px 0px;
-  }
-  
-  .bicicletas-lista li {
-    flex: 1;
-    min-width: 280px;
-  }
-  
-  .bicicletas-lista a {
-    display: block;
-  }
-  
-  .bicicletas-lista img {
-    margin-bottom: 16px;
-  }
-  
-  .bicicletas-lista h3 {
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .bicicletas-lista h3::before {
-    content: "";
-    display: inline-block;
-    height: 8px;
-    width: 12px;
-    margin-right: 8px;
-    background-color: var(--cor-p1);
-    transition: width 0.2s;
-  }
-  
-  .bicicletas-lista a:hover h3::before {
-    width: 24px;
-  }
-  
-  .bicicletas-lista li span {
-    padding-left: 20px;
-  }
-  
-  @media (max-width: 800px) {
-    .bicicletas-lista {
-      padding-bottom: 60px;
-    }
-    .bicicletas-lista ul {
-      gap: 20px;
-    }
-  }
-  
+}

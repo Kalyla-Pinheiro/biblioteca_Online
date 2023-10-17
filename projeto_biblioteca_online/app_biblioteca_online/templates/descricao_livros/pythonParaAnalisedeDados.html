@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sistema de Empréstimo de Livros</title>
+    <style>
+        body {
+            background-color: #261717;
+            color: #dfb97f;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #120b0b;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #dfb97f;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #120b0b;
+            border: 1px solid #120000;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .book {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .book-image {
+            flex: 1;
+            max-width: 200px;
+            text-align: center;
+        }
+
+        .book-image img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #120000;
+        }
+
+        .book-info {
+            flex: 3;
+            margin-left: 20px;
+        }
+
+        .book-title {
+            color: #dfb97f;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .book-author {
+            color: #F7E9D4;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .book-description {
+            color: #F7E9D4;
+            margin: 10px 0;
+            text-align: justify;
+        }
+
+        .book-paginas,
+        .book-quantidade,
+        .book-quantidadeMaxima,
+        .book-editora,
+        .book-genero {
+            color: #dfb97f;
+            margin: 5px 0;
+        }
+
+        .button {
+            background-color: #89714e;
+            color: #261717;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .button:hover {
+            background-color: #6f5c40;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Sistema de Empréstimo de Livros</h1>
+    </div>
+    
+    <div class="container">
+        <div class="book">
+            <div class="book-image">
+                <img src="https://m.media-amazon.com/images/I/81+RQr2khqL._SL1500_.jpg" alt="Capa do Livro 1">
+            </div>
+            <div class="book-info">
+                <h2 class="book-title">Python Para Análise de Dados</h2>
+                <p class="book-author">Autor: Wes McKinney</p>
+                <p class="book-paginas">Páginas: 624</p>
+                <p class="book-editora">Editora: Novatec Editora; 3ª edição (16 março 2023)</p>
+                <p class="book-quantidade">Quantidade disponível: 15</p>
+                <p class="book-quantidadeMaxima">Quantidade máxima disponível de empréstimo: 3</p>
+                <p class="book-genero">Gênero: Informática e linguagens</p>
+                <p class="book-description">Este livro ensina a utilizar Pandas, NumPy e Jupyter para trabalhar eficientemente com dados em Python, abrangendo tratamento, análise exploratória e visualização de dados, sendo uma leitura fundamental para quem deseja se destacar em análise de dados com Python.</p>
+                <button class="button" onclick="cancelarLivro('Código Limpo')">Cancelar</button>
+                <button class="button" onclick="emprestarLivro('Código Limpo')">Emprestar</button>
+            </div>
+        </div>
+
+             <script>
+            let livrosDisponiveis = {
+                "Código Limpo": 3,
+                "Título do Livro 2": 5,
+                "Título do Livro 3": 2
+            };
+            let livrosEmprestados = {};
+    
+            function emprestarLivro(tituloLivro) {
+                if (!livrosEmprestados[tituloLivro]) {
+                    livrosEmprestados[tituloLivro] = 1;
+                } else {
+                    livrosEmprestados[tituloLivro]++;
+                }
+    
+                if (livrosDisponiveis[tituloLivro] > 0 && livrosEmprestados[tituloLivro] <= 3) {
+                    livrosDisponiveis[tituloLivro]--;
+                    alert(`Livro "${tituloLivro}" emprestado com sucesso.`);
+                } else if (livrosEmprestados[tituloLivro] > 3) {
+                    alert(`Você já emprestou o máximo de cópias permitido do livro "${tituloLivro}".`);
+                } else {
+                    alert(`Não há mais cópias disponíveis do livro "${tituloLivro}".`);
+                }
+            }
+    
+            function cancelarLivro(tituloLivro) {
+                if (livrosEmprestados[tituloLivro] > 0) {
+                    livrosEmprestados[tituloLivro]--;
+                    livrosDisponiveis[tituloLivro]++;
+                    alert(`Empréstimo do livro "${tituloLivro}" cancelado com sucesso.`);
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>
