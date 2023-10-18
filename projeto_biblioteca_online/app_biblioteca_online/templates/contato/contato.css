@@ -112,7 +112,7 @@ img {
 }
 
 .contato-endereco {
-  background: url("/imagemContato/local.svg") no-repeat 0px 2px;
+  background: url("imagemContato/local.svg") no-repeat 0px 2px;
   margin-bottom: 60px;
   padding-left: 28px;
 }
@@ -120,7 +120,7 @@ img {
   margin-bottom: 20px;
 }
 .contato-meios a:first-child {
-  background: url("/imagemContato/email.svg") no-repeat 0px 2px;
+  background: url("imagemContato/email.svg") no-repeat 0px 2px;
 }
 
 .contato-meios a {
@@ -135,7 +135,7 @@ img {
 }
 
 .contato-meios a:nth-child(3) {
-  background: url("/imagemContato/telefone.svg") no-repeat 0px 2px;
+  background: url("imagemContato/telefone.svg") no-repeat 0px 2px;
   margin-top: 60px;
 }
 
